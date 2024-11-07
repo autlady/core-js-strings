@@ -186,6 +186,7 @@ function removeFirstOccurrences(str, value) {
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
 function removeLastOccurrences(/* str, value */) {
+  // return str.slice(0, str.lastIndexOf(value));
   throw new Error('Not implemented');
 }
 
@@ -201,8 +202,10 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  const res = [...new TextEncoder().encode(str)].reduce((a, b) => a + b);
+  return res;
+  // throw new Error('Not implemented');
 }
 
 /**
