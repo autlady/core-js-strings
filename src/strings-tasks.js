@@ -202,10 +202,16 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(str) {
-  const res = [...new TextEncoder().encode(str)].reduce((a, b) => a + b);
-  return res;
-  // throw new Error('Not implemented');
+function sumOfCodes(/* str */) {
+  // if (str.length > 0) {
+  //   let sum = 0;
+  //   for (let i = 0; i < str.length; i += 1) {
+  //     sum += str.charAt(i).charCodeAt(0);
+  //   }
+  //   return sum;
+  // }
+  // return 0;
+  throw new Error('Not implemented');
 }
 
 /**
@@ -219,8 +225,12 @@ function sumOfCodes(str) {
  *   startsWith('Hello World', 'World') => false
  *   startsWith('Hello World', 'Hello') => true
  */
-function startsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function startsWith(str, substr) {
+  if (str.startsWith(substr)) {
+    return true;
+  }
+  return false;
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -234,8 +244,12 @@ function startsWith(/* str, substr */) {
  *   endsWith('Hello World', 'World') => true
  *   endsWith('Hello World', 'Hello') => false
  */
-function endsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function endsWith(str, substr) {
+  if (str.endsWith(substr)) {
+    return true;
+  }
+  return false;
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -251,8 +265,21 @@ function endsWith(/* str, substr */) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  let stringMin = '';
+  let stringSec = '';
+  if (minutes < 10) {
+    stringMin = String(minutes).padStart(2, '0');
+  } else {
+    stringMin = String(minutes);
+  }
+  if (seconds < 60) {
+    stringSec = String(seconds).padStart(2, '0');
+  } else {
+    stringSec = String(seconds);
+  }
+  return `${stringMin}:${stringSec}`;
+  // throw new Error('Not implemented');
 }
 
 /**
