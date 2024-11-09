@@ -420,8 +420,17 @@ function reverseWords(str) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  const reversedString = [];
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === str[i].toUpperCase()) {
+      reversedString.push(str[i].toLowerCase());
+    } else {
+      reversedString.push(str[i].toUpperCase());
+    }
+  }
+  return reversedString.join('');
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -437,8 +446,9 @@ function invertCase(/* str */) {
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -506,6 +516,11 @@ function extractEmails(/* str */) {
  *
  */
 function encodeToRot13(/* str */) {
+  // const originalAlpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  // const cipher = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM';
+  // return str.replace(
+  //   /[a-z]/gi,
+  //   (letter) => cipher[originalAlpha.indexOf(letter)]);
   throw new Error('Not implemented');
 }
 
@@ -534,6 +549,24 @@ function encodeToRot13(/* str */) {
  *   'K♠' => 51
  */
 function getCardId(/* value */) {
+  // const suits = ['♣', '♦', '♥', '♠'];
+  // const ranks = [
+  //   'A',
+  //   '2',
+  //   '3',
+  //   '4',
+  //   '5',
+  //   '6',
+  //   '7',
+  //   '8',
+  //   '9',
+  //   '10',
+  //   'J',
+  //   'Q',
+  //   'K'];
+  // const suitIndex = suits.indexOf(value.slice(-1));
+  // const rankIndex = ranks.indexOf(value.slice(0, value.length - 1));
+  // return suitIndex * 13 + rankIndex;
   throw new Error('Not implemented');
 }
 
