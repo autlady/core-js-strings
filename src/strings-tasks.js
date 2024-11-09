@@ -497,8 +497,9 @@ function unbracketTag(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';');
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -517,13 +518,14 @@ function extractEmails(/* str */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  // const originalAlpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  // const cipher = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM';
-  // return str.replace(
-  //   /[a-z]/gi,
-  //   (letter) => cipher[originalAlpha.indexOf(letter)]);
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const originalAlpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const cipher = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM';
+  return str.replace(
+    /[a-z]/gi,
+    (letter) => cipher[originalAlpha.indexOf(letter)]
+  );
+  // throw new Error('Not implemented');
 }
 
 /**
