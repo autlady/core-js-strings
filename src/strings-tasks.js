@@ -186,7 +186,8 @@ function removeFirstOccurrences(str, value) {
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
 function removeLastOccurrences(/* str, value */) {
-  // return str.slice(0, str.lastIndexOf(value));
+  // const lastIndex = str.lastIndexOf(value);
+  // return str.slice(0, lastIndex) + str.slice(lastIndex + value.length);
   throw new Error('Not implemented');
 }
 
@@ -202,16 +203,16 @@ function removeLastOccurrences(/* str, value */) {
  *   sumOfCodes('') => 0
  *   sumOfCodes() => 0
  */
-function sumOfCodes(/* str */) {
-  // if (str.length > 0) {
-  //   let sum = 0;
-  //   for (let i = 0; i < str.length; i += 1) {
-  //     sum += str.charAt(i).charCodeAt(0);
-  //   }
-  //   return sum;
-  // }
-  // return 0;
-  throw new Error('Not implemented');
+function sumOfCodes(str) {
+  if (!str || str === '') {
+    return 0;
+  }
+  let sum = 0;
+  for (let i = 0; i < str.length; i += 1) {
+    sum += str.charAt(i).charCodeAt(0);
+  }
+  return sum;
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -552,26 +553,27 @@ function encodeToRot13(str) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  // const suits = ['♣', '♦', '♥', '♠'];
-  // const ranks = [
-  //   'A',
-  //   '2',
-  //   '3',
-  //   '4',
-  //   '5',
-  //   '6',
-  //   '7',
-  //   '8',
-  //   '9',
-  //   '10',
-  //   'J',
-  //   'Q',
-  //   'K'];
-  // const suitIndex = suits.indexOf(value.slice(-1));
-  // const rankIndex = ranks.indexOf(value.slice(0, value.length - 1));
-  // return suitIndex * 13 + rankIndex;
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const suits = ['♣', '♦', '♥', '♠'];
+  const ranks = [
+    'A',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    'J',
+    'Q',
+    'K',
+  ];
+  const suitIndex = suits.indexOf(value.slice(-1));
+  const rankIndex = ranks.indexOf(value.slice(0, value.length - 1));
+  return suitIndex * 13 + rankIndex;
+  // throw new Error('Not implemented');
 }
 
 module.exports = {
